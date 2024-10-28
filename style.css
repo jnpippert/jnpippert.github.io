@@ -30,9 +30,12 @@ body::-webkit-scrollbar-thumb {
     border-radius: .5rem;
 }
 
+
+
 main {
     margin-left: 5rem;
     padding: 1rem;
+    width: calc(100% - 1rem);
 }
 
 h1,
@@ -208,10 +211,9 @@ footer {
     color: var(--detail-color);
 }
 
-body {
+/* body {
     overflow-x: hidden;
-    /* Verhindert horizontales Scrollen */
-}
+} */
 
 #sec-aboutme,
 #sec-cv,
@@ -224,6 +226,10 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
+
+    .banner {
+        width: 100%;
+    }
 
     body {
         width: 100%;
@@ -267,8 +273,9 @@ body {
     }
 
     main {
-        margin: 0;
+        margin-left: 0;
         padding: 0;
+        width: calc(100% - 1rem);
     }
 
     .nav-link:hover {
