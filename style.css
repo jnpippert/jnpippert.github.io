@@ -18,7 +18,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-    width: 1rem;
+    width: .75rem;
 }
 
 body::-webkit-scrollbar-track {
@@ -133,26 +133,20 @@ main .contcontainer {
 .impressum {
     display: flex;
     flex-direction: column;
-    /* Elemente untereinander anordnen */
     align-items: center;
-    /* Zentrieren der Elemente */
     justify-content: center;
     padding: 1rem;
-    /* Polsterung für den Footer */
     margin: 0;
     background: var(--bg-secondary);
-    /* Hintergrundfarbe */
+
 }
 
 
 .imp-icons {
     display: flex;
-    /* Flexbox für die Icons */
     justify-content: center;
-    /* Icons in der Mitte ausrichten */
     margin-bottom: 0.5rem;
     margin-top: 1rem;
-    /* Abstand zwischen Icons und Text */
 }
 
 .impressum a {
@@ -174,15 +168,12 @@ main .contcontainer {
 footer {
     background: var(--bg-secondary);
     padding: 1rem;
-    /* Etwas Polsterung für den Footer */
 }
 
 .copy {
     color: #696464;
     text-align: center;
-    /* Text zentrieren */
     font-size: 14px;
-    /* Optional: Schriftgröße anpassen */
 }
 
 .hamburger-menu {
@@ -192,7 +183,7 @@ footer {
     position: fixed;
     top: 0;
     left: 0;
-    width: calc(100% - 1rem);
+    width: calc(100% - .75rem);
     padding: 10px;
     background-color: var(--bg-primary);
     color: var(--text-primary);
@@ -211,9 +202,7 @@ footer {
 #sec-pubs,
 #sec-soft {
     padding-top: 5rem;
-    /* Höhe der Navbar */
     margin-top: -5rem;
-    /* Negative Margen, um den Offset zu kompensieren */
 }
 
 @media only screen and (max-width: 600px) {
@@ -233,6 +222,7 @@ footer {
         height: 4rem;
         padding: .25rem 0;
         font-size: 12px;
+        width: 100%;
     }
 
     .navbar {
@@ -248,6 +238,7 @@ footer {
 
     .navbar-nav {
         flex-direction: row;
+        width: 100%;
     }
 
     .nav-link {
@@ -270,6 +261,7 @@ footer {
     .nav-link i {
         font-size: 1rem;
         padding: 1.5rem;
+        width: 100%;
     }
 
     .hamburger-menu {
