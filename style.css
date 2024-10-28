@@ -209,15 +209,16 @@ main .contcontainer {
     color: var(--detail-color);
 }
 
-#sec-aboutme,
-#sec-cv,
-#sec-pubs,
-#sec-soft {
-    padding-top: 5rem;
-    margin-top: -5rem;
-}
 
 @media only screen and (max-width: 600px) {
+
+    #sec-aboutme,
+    #sec-cv,
+    #sec-pubs,
+    #sec-soft {
+        padding-top: 5rem;
+        margin-top: -5rem;
+    }
 
     .impressum a {
         color: #555;
