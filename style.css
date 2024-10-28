@@ -138,15 +138,12 @@ main .contcontainer {
 .impressum {
     display: flex;
     flex-direction: column;
-    /* Elemente untereinander anordnen */
     align-items: center;
-    /* Zentrieren der Elemente */
     justify-content: center;
     padding: 1rem;
-    /* Polsterung für den Footer */
     margin: 0;
     background: var(--bg-secondary);
-    /* Hintergrundfarbe */
+    width: 100%;
 }
 
 
@@ -163,7 +160,6 @@ main .contcontainer {
 .impressum a {
     color: #555;
     font-size: 26px;
-
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -275,7 +271,7 @@ footer {
     main {
         margin-left: 0;
         padding: 0;
-        width: calc(100% - 1rem);
+        width: 100%;
     }
 
     .nav-link:hover {
