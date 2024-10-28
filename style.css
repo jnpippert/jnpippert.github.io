@@ -175,6 +175,13 @@ main .contcontainer {
     bottom: 0;
 }
 
+.footer a {
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
 .copy {
     color: #696464;
     text-align: center;
@@ -303,12 +310,6 @@ main .contcontainer {
     body::-webkit-scrollbar {
         width: .5rem;
     }
-
-    footer {
-        width: 100%
-    }
-
-    ;
 }
 
 @media only screen and (min-width: 600px) {
