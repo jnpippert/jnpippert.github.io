@@ -149,12 +149,10 @@ main .contcontainer {
 
 .imp-icons {
     display: flex;
-    /* Flexbox für die Icons */
     justify-content: center;
-    /* Icons in der Mitte ausrichten */
     margin-bottom: 0.5rem;
     margin-top: 1rem;
-    /* Abstand zwischen Icons und Text */
+    width: 100%;
 }
 
 .impressum a {
@@ -261,6 +259,7 @@ footer {
 
     .navbar-nav {
         flex-direction: row;
+        width: 100%;
     }
 
     .nav-link {
