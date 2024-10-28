@@ -272,9 +272,6 @@ main .contcontainer {
         width: 100%;
     }
 
-    .nav-item {
-        size: 5%;
-    }
 
     .nav-link {
         justify-content: center;
@@ -293,10 +290,13 @@ main .contcontainer {
         color: var(--detail-color);
     }
 
+
     .nav-link i {
-        font-size: 1rem;
-        padding: 1.5rem;
+        font-size: auto;
+        margin: auto;
+        padding: auto;
         width: 100%;
+        text-align: center;
     }
 
     .hamburger-menu {
@@ -335,7 +335,10 @@ main .contcontainer {
     }
 
     .imp-item {
+        text-align: center;
+        font-size: auto;
         margin: 0 1vh;
+        padding: auto;
     }
 }
 
