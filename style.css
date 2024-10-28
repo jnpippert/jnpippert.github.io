@@ -136,21 +136,15 @@ main .contcontainer {
 }
 
 .impressum {
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
     margin: 0;
     background: var(--bg-secondary);
-
 }
 
 
 .imp-icons {
     display: flex;
     justify-content: center;
-    margin-bottom: 0.5rem;
     margin-top: 1rem;
 }
 
@@ -264,7 +258,7 @@ main .contcontainer {
 
     .navbar {
         bottom: 0;
-        width: 100vh;
+        width: 100%;
         height: 5rem;
     }
 
@@ -276,6 +270,10 @@ main .contcontainer {
     .navbar-nav {
         flex-direction: row;
         width: 100%;
+    }
+
+    .nav-item {
+        size: 5%;
     }
 
     .nav-link {
@@ -334,6 +332,10 @@ main .contcontainer {
 
     body::-webkit-scrollbar {
         width: .5rem;
+    }
+
+    .imp-item {
+        margin: 0 1vh;
     }
 }
 
