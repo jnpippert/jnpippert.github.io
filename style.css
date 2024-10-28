@@ -103,17 +103,10 @@ hr {
     font-family: 'Inconsolata', sans-serif;
 }
 
-main .headcontainer {
-    max-width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-
+main .headcontainer,
 main .contcontainer {
     max-width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
 .navbar-nav .portrait {
@@ -122,15 +115,11 @@ main .contcontainer {
     height: 5rem;
     display: flex;
     align-self: center;
+    transition: transform var(--transition-speed) ease;
 }
 
-
-.nav-link i {
-    margin-right: 0;
-    margin-left: 1.5rem;
-    font-size: 1.5rem;
-    padding: 0;
-    gap: 0;
+.navbar:hover .portrait {
+    transform: scale(3);
 }
 
 .banner img {
@@ -138,7 +127,6 @@ main .contcontainer {
     height: 16rem;
     transition: height var(--transition-speed) ease;
     object-fit: cover;
-
 }
 
 .logo-text {
@@ -147,8 +135,6 @@ main .contcontainer {
     left: -999px;
     transition: var(--transition-speed);
 }
-
-
 
 .gallery {
     width: min(1600px, 100%);
@@ -161,12 +147,7 @@ main .contcontainer {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0;
-    margin: 0;
-    height: 3rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    text-decoration: none;
+    padding: 1rem 0;
 }
 
 .impressum a {
@@ -181,8 +162,7 @@ main .contcontainer {
 }
 
 .imp-item {
-    margin-left: 2rem;
-    margin-right: 2rem;
+    margin: 0 2rem;
 }
 
 footer {
@@ -193,38 +173,23 @@ footer {
     color: #696464;
 }
 
-.navbar .portrait {
-    transition: var(--transition-speed) ease;
+.hamburger-menu {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    /* Abstand vom oberen Rand */
+    right: 10px;
+    /* Abstand vom rechten Rand */
+    z-index: 1000;
+    /* Höherer Z-Index, damit es über allen anderen Inhalten bleibt */
+    color: var(--bg-secondary);
 }
 
-
-.logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-    color: var(--text-secondary);
-    background: var(--bg-primary);
-    font-size: 1.5rem;
-    letter-spacing: 0.3ch;
-    width: 100%;
-    flex-direction: column;
-    margin: auto;
+.hamburger-menu:hover {
+    color: var(--detail-color);
 }
-
-.navbar .portrait {
-    border-radius: 450px;
-    width: 5rem;
-    height: 5rem;
-    transition: transform var(--transition-speed) ease;
-}
-
-.navbar:hover .portrait {
-    transform: scale(3);
-}
-
 
 @media only screen and (max-width: 600px) {
     .navbar {
@@ -233,7 +198,8 @@ footer {
         height: 5rem;
     }
 
-    .logo {
+    .logo,
+    .link-text {
         display: none;
     }
 
@@ -250,19 +216,39 @@ footer {
         padding: 0;
     }
 
+    body {
+        overflow-x: hidden;
+    }
+
+    .nav-link:hover {
+        color: var(--detail-color);
+    }
+
     .nav-link i {
         font-size: 1rem;
-        padding: 0;
-        margin: 0;
-        gap: 0px;
+        padding: 1.5rem;
     }
 
-    .nav-item:last-child {
-        margin-right: 0;
-        margin-left: 0;
+    .hamburger-menu {
+        display: block;
     }
 
+    .navbar {
+        display: none;
+    }
 
+    .navbar.active {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 5rem;
+        background: var(--bg-primary);
+        z-index: 999;
+        transition: transform var(--transition-speed) ease;
+    }
 }
 
 @media only screen and (min-width: 600px) {
@@ -284,5 +270,13 @@ footer {
 
     .banner:hover img {
         height: 32rem;
+    }
+
+    .nav-link i {
+        margin-right: 0;
+        margin-left: 1.5rem;
+        font-size: 1.5rem;
+        padding: 0;
+        gap: 0;
     }
 }

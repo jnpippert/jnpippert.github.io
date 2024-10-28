@@ -9,7 +9,6 @@
     <title>Jan-Niklas Pippert</title>
     <link rel="icon" type="image/x-icon" href="/images/icon.png">
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
@@ -18,7 +17,10 @@
 </head>
 
 <body>
-    <nav class="navbar">
+    <!-- Hamburger Menu Icon for Mobile View -->
+    <div class="hamburger-menu" onclick="toggleMenu()">&#9776;</div>
+
+    <nav class="navbar" id="navbar">
         <ul class="navbar-nav">
             <li class="logo">
                 <a href="#" class="nav-link">
@@ -67,19 +69,18 @@
                     <span class="link-text">Contact Me</span>
                 </a>
             </li>
-
         </ul>
     </nav>
 
     <div class="banner">
         <img class="banner-im" src="images/banner.JPG" alt="M33">
     </div>
+
     <main>
         <div class="headcontainer">
             <h1 id="sec-aboutme">I am a PhD student working on stellar populations of galaxies.</h1>
         </div>
-        <div class="contcontainer">
-        </div>
+        <div class="contcontainer"></div>
         <hr>
         <div class="headcontainer">
             <h2 id="sec-cv">CV</h2>
@@ -98,7 +99,6 @@
                 <li>Euclid Consortiums Meeting, Rome, Italy</li>
                 <li>Extreme Galaxies Conference, Reykjavik, Iceland</li>
                 <li>Austrian Early Career Conference, Salzburg, Austria</li>
-
             </ul>
             <h3>Summer-Schools:</h3>
             <ul>
@@ -118,10 +118,10 @@
         <div class="soft1">
             <h3 class="soft">astrostreampy</h3>
         </div>
-
     </main>
+
     <footer class="impressum">
-        <a id="imp-link" class="imp-item" href="mailto: jnpippert@mpe.mpg.de" target="_blank" title="E-Mail">
+        <a id="imp-link" class="imp-item" href="mailto:jnpippert@mpe.mpg.de" target="_blank" title="E-Mail">
             <i class="fa-solid fa-envelope"></i>
         </a>
         <a class="imp-item" href="https://www.instagram.com/diggesprdctns/" target="_blank" title="Instagram">
@@ -137,8 +137,21 @@
         <a class="imp-item" href="https://orcid.org/0009-0006-9461-002X" target="_blank" title="ORCID">
             <i class="fa-brands fa-orcid"></i>
         </a>
-        <p class="copy">
-            &copy Jan-Niklas Pippert. All rights reserved.
-        </p>
+        <p class="copy">&copy Jan-Niklas Pippert. All rights reserved.</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("navbar").classList.toggle("active");
+        }
+
+        // Menü schließen, wenn nach unten gescrollt wird
+        window.onscroll = () => {
+            if (window.innerWidth <= 600) {
+                document.getElementById("navbar").classList.remove("active");
+            }
+        };
+    </script>
 </body>
+
+</html>
