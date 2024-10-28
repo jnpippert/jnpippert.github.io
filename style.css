@@ -273,7 +273,7 @@ footer {
         text-align: center;
         margin: auto;
         font-size: 20px;
-        color: rgba(255, 0, 0, 0.382);
+        color: rgba(111, 255, 0, 0.382);
     }
 
     .navbar {
@@ -298,6 +298,12 @@ footer {
     body::-webkit-scrollbar {
         width: .5rem;
     }
+
+    footer {
+        width: 100%
+    }
+
+    ;
 }
 
 @media only screen and (min-width: 600px) {
