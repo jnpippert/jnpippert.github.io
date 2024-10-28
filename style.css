@@ -193,21 +193,13 @@ footer {
     top: 0;
     left: 0;
     width: calc(100% - 1rem);
-    /* Volle Breite minus Breite der Scrollbar */
     padding: 10px;
-    /* Abstand nach innen für bessere Klickfläche */
     background-color: var(--bg-primary);
-    /* Hintergrundfarbe des Streifens */
     color: var(--text-primary);
-    /* Textfarbe */
     z-index: 1000;
-    /* Höherer Z-Index für Überlagerung */
     text-align: right;
-    /* Ausrichtung des Menüsymbols rechts */
     padding-right: 20px;
-    /* Abstand zum rechten Rand */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    /* Optional: Schatten für visuelle Trennung */
 }
 
 .hamburger-menu:hover {
