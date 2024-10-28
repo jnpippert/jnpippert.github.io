@@ -18,7 +18,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-    width: .75rem;
+    width: 1rem;
 }
 
 body::-webkit-scrollbar-track {
@@ -30,12 +30,9 @@ body::-webkit-scrollbar-thumb {
     border-radius: .5rem;
 }
 
-
-
 main {
     margin-left: 5rem;
     padding: 1rem;
-    width: calc(100% - 1rem);
 }
 
 h1,
@@ -108,10 +105,8 @@ hr {
 
 main .headcontainer,
 main .contcontainer {
-    width: 100%;
     max-width: fit-content;
     margin: 0 auto;
-    overflow: hidden;
 }
 
 .banner img {
@@ -138,26 +133,32 @@ main .contcontainer {
 .impressum {
     display: flex;
     flex-direction: column;
+    /* Elemente untereinander anordnen */
     align-items: center;
+    /* Zentrieren der Elemente */
     justify-content: center;
     padding: 1rem;
+    /* Polsterung für den Footer */
     margin: 0;
     background: var(--bg-secondary);
-    width: 100%;
+    /* Hintergrundfarbe */
 }
 
 
 .imp-icons {
     display: flex;
+    /* Flexbox für die Icons */
     justify-content: center;
+    /* Icons in der Mitte ausrichten */
     margin-bottom: 0.5rem;
     margin-top: 1rem;
-    width: 100%;
+    /* Abstand zwischen Icons und Text */
 }
 
 .impressum a {
     color: #555;
     font-size: 26px;
+
     text-decoration: none;
     transition: color 0.3s;
 }
@@ -205,10 +206,6 @@ footer {
     color: var(--detail-color);
 }
 
-/* body {
-    overflow-x: hidden;
-} */
-
 #sec-aboutme,
 #sec-cv,
 #sec-pubs,
@@ -220,14 +217,6 @@ footer {
 }
 
 @media only screen and (max-width: 600px) {
-
-    .banner {
-        width: 100%;
-    }
-
-    body {
-        width: 100%;
-    }
 
     .impressum a {
         color: #555;
@@ -244,33 +233,34 @@ footer {
         height: 4rem;
         padding: .25rem 0;
         font-size: 12px;
-        width: 100%;
     }
 
     .navbar {
         bottom: 0;
-        width: 100%;
+        width: 100vh;
         height: 5rem;
     }
 
+    .logo,
     .link-text {
         display: none;
     }
 
     .navbar-nav {
         flex-direction: row;
-        width: 100%;
     }
 
     .nav-link {
         justify-content: center;
-        flex-grow: 1;
     }
 
     main {
-        margin-left: 0;
+        margin: 0;
         padding: 0;
-        width: 100%;
+    }
+
+    body {
+        overflow-x: hidden;
     }
 
     .nav-link:hover {
@@ -284,6 +274,7 @@ footer {
 
     .hamburger-menu {
         display: flex;
+        width: 100%;
     }
 
     .hamburger-menu .menu-text {
@@ -295,6 +286,7 @@ footer {
 
     .navbar {
         display: none;
+        width: 100%;
     }
 
     .navbar.active {
