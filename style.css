@@ -167,8 +167,7 @@ main .contcontainer {
 
 footer {
     background: var(--bg-secondary);
-    padding: 1rem;
-    width: 100%;
+    width: calc(100%-.75rem);
 }
 
 .copy {
