@@ -214,6 +214,16 @@ footer {
     color: var(--detail-color);
 }
 
+#sec-aboutme,
+#sec-cv,
+#sec-pubs,
+#sec-soft {
+    padding-top: 5rem;
+    /* Höhe der Navbar */
+    margin-top: -5rem;
+    /* Negative Margen, um den Offset zu kompensieren */
+}
+
 @media only screen and (max-width: 600px) {
 
     .impressum a {
