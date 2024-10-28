@@ -35,6 +35,11 @@ main {
     padding: 1rem;
 }
 
+html,
+body {
+    height: 100%;
+}
+
 h1,
 h2,
 h3,
@@ -172,6 +177,7 @@ main .contcontainer {
     /* Alle Elemente haben box-sizing border-box */
 }
 
+
 .footer {
     display: flex;
     flex-wrap: nowrap;
@@ -246,6 +252,11 @@ main .contcontainer {
         padding: 0;
     }
 
+    .footer {
+        width: 100%;
+        bottom: 0;
+    }
+
     .impressum {
         display: flex;
         align-items: center;
@@ -304,7 +315,7 @@ main .contcontainer {
         text-align: center;
         margin: auto;
         font-size: 20px;
-        color: rgba(255, 0, 0, 0.382);
+        color: rgba(119, 255, 0, 0.382);
     }
 
     .navbar {
