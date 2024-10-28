@@ -165,9 +165,14 @@ main .contcontainer {
     margin: 0 2rem;
 }
 
-footer {
+.footer {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    position: fixed;
     background: var(--bg-secondary);
     width: calc(100%-.75rem);
+    bottom: 0;
 }
 
 .copy {
@@ -273,7 +278,7 @@ footer {
         text-align: center;
         margin: auto;
         font-size: 20px;
-        color: rgba(111, 255, 0, 0.382);
+        color: rgba(146, 146, 146, 0.382);
     }
 
     .navbar {
