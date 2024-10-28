@@ -10,6 +10,24 @@
     --navlink-height: 5rem;
 }
 
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    /* Alle Elemente haben box-sizing border-box */
+}
+
+.portrait {
+    border-radius: 450px;
+    width: 8rem;
+    height: 8rem;
+    filter: grayscale(100%);
+    display: flex;
+    float: left;
+    margin-right: 10px;
+}
+
 body {
     color: rgb(33, 33, 33);
     background-color: rgb(247, 243, 237);
@@ -104,8 +122,50 @@ hr {
     color: var(--text-primary);
 }
 
-.soft {
+.soft-text {
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.soft-name {
     font-family: 'Inconsolata', sans-serif;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.soft-border {
+    display: block;
+    border: 1rem;
+    border-top: .1rem solid #868686;
+    margin: 5em 0;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.soft-image-right {
+    border-radius: 20px;
+    width: 8rem;
+    height: auto;
+    display: flex;
+    float: right;
+    margin-left: 30px;
+    margin-right: 3rem;
+}
+
+.soft-image-left {
+    border-radius: 20px;
+    width: 8rem;
+    height: auto;
+    display: flex;
+    float: left;
+    justify-content: left;
+    margin-right: 30px;
+    margin-left: 3rem;
+}
+
+.hyperlink {
+    text-decoration: none;
+    color: #3636cc;
 }
 
 main .headcontainer,
@@ -141,7 +201,6 @@ main .contcontainer {
     background: var(--bg-secondary);
 }
 
-
 .imp-icons {
     display: flex;
     justify-content: center;
@@ -164,12 +223,6 @@ main .contcontainer {
     margin: 0 2rem;
 }
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    /* Alle Elemente haben box-sizing border-box */
-}
 
 
 .footer {

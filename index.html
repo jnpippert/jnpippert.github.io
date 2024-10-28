@@ -73,14 +73,24 @@
     </nav>
 
     <div class="banner">
-        <img class="banner-im" src="images/banner.JPG" alt="M33">
+        <img class="banner-im" src="images/banner_milkyway.jpg" alt="MilkyWayCore">
     </div>
 
     <main>
         <div class="headcontainer">
             <h1 id="sec-aboutme">I am a PhD student working on stellar populations of galaxies.</h1>
         </div>
-        <div class="contcontainer"></div>
+        <div class="contcontainer"><img class="portrait" src="images/portrait.jpg" alt="portrait">
+            <p>Everything started with a camera, a tripod and a clear sky above my head. As I began to wonder what the
+                universe has to offer, the path was clear; <i>to become an astrophysicist</i>.</p>
+            <p>I studied Physics and Astrophysics at the Ludwig-Maximilians-Universität in Munich. During that time I
+                had
+                the chance to become an observer at the 2.1m Wendelstein Telescope. After my master's degree, which I
+                finished with a thesis about the modeling and the photometry of extraglactic tidal streams and tails, I
+                started my PhD in 2023 at the Max Planck Institute for extraterrestrial Physics. My research now focuses
+                on
+                stellar populations of galaxies in the Perseus cluster of galaxies.</p>
+        </div>
         <hr>
         <div class="headcontainer">
             <h2 id="sec-cv">CV</h2>
@@ -105,6 +115,15 @@
                 <h4>2024</h4>
                 <li>IFAS9 - IFU: 3D spectroscopy, Lyon, France</li>
             </ul>
+            <h3>Programming Languages:</h3>
+            <ul>
+                <h4>Advanced</h4>
+                <li>Python</li>
+                <h4>Intermediate</h4>
+                <li>Bash</li>
+                <h4>Basic</h4>
+                <li>C++, Java, HTML, CSS</li>
+            </ul>
         </div>
         <hr>
         <div class="headcontainer">
@@ -115,8 +134,49 @@
         <div class="headcontainer">
             <h2 id="sec-soft">Software</h2>
         </div>
-        <div class="soft1">
-            <h3 class="soft">astrostreampy</h3>
+        <div class="soft-asp">
+            <img class="soft-image-left" src="images/placeholder.png" alt="placeholder">
+            <h3 class="soft-name">astrostreampy</h3>
+            <p class="soft-text">Model Tidal Streams.
+            </p>
+        </div>
+        <hr class="soft-border">
+        <div class="soft-qhyc">
+            <img class="soft-image-right" src="images/placeholder.png" alt="placeholder">
+            <h3 class="soft-name">qhycontrol</h3>
+            <p class="soft-text">A porgram to control a QHYCCD camera. Developed for the QHY 600m Pro, which is the
+                current CMOS camera on
+                the CDK17 at Wendelstein. This telescope is used for the training of students, TESS transits and public
+                outreach. It utilizes the QHYCCD SDK to connect and open the camera, set the parameters and to take one
+                or multiple images. To save the images as FITS files I use the LTL library, devloped among others by
+                <a class="hyperlink" href="https://www.usm.uni-muenchen.de/~cag/cag_ge.html">Claus Gössl</a>, the head
+                of the Software and Hardware at the Wendelstein Telescope.
+            </p>
+        </div>
+        <hr class="soft-border">
+        <div class="soft-qhyr">
+            <img class="soft-image-left" src="images/placeholder.png" alt="placeholder">
+            <h3 class="soft-name">qhyreduce</h3>
+            <p class="soft-text">The corresponding data reduction pipeline (for beautiful images) to the qhycontrol
+                software. The
+                pipeline is parallelized and written in Python. It performs the basic data reduction steps: Overscan
+                Subtraction, Overscan Cropping, Bias Subtraction, Dark Subtraction and Flat Fielding. The astrometric
+                solution is done via bash scripts utilizing <a class="hyperlink"
+                    href="https://www.astromatic.net/software/sextractor/">SExtractor</a> and <a class="hyperlink"
+                    href="https://www.astromatic.net/software/scamp/">Scamp</a>. For the coadding I use <a
+                    class="hyperlink" href="https://www.astromatic.net/software/swarp/">SWarp</a>.
+        </div>
+        <hr class="soft-border">
+        <div class="soft-sf">
+            <img class="soft-image-right" src="images/placeholder.png" alt="placeholder">
+            <h3 class="soft-name">scifloat</h3>
+            <p class="soft-text">A fun project I started when I supervised the physics labs of medicine students. As
+                they should learn
+                exactly how to round correctly, I thought of writing a small Python package which contains one data
+                type; the scifloat. The type inhibits three values, the measurement and it's
+                corresponding errors. The errors are rounded by the rules of significant digits and afterwards the
+                measurement is rounded accordingly. The type is pip-installable as a Python package called <a
+                    class="hyperlink" href="https://pypi.org/project/scifloat/">scifloat</a>.</p>
         </div>
     </main>
 
