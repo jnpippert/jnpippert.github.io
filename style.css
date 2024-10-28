@@ -165,20 +165,38 @@ main .contcontainer {
     margin: 0 2rem;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    /* Alle Elemente haben box-sizing border-box */
+}
+
 .footer {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
     position: fixed;
     background: var(--bg-secondary);
-    width: calc(100%-.75rem);
+    width: 100%;
+    /* Ändere von calc(100% - .75rem) zu 100% */
     bottom: 0;
+    left: 0;
+    /* Füge left: 0 hinzu */
+    padding: 0 0.75rem;
+    /* Füge etwas Padding hinzu, um den Inhalt vom Rand abzuhalten */
+    box-sizing: border-box;
+    /* Stelle sicher, dass Padding zur Gesamtbreite gehört */
 }
 
 .footer a {
-    display: inline-block;
+    display: flex;
+    /* Verwende flex, um sicherzustellen, dass Links nebeneinander angeordnet sind */
+    align-items: center;
+    /* Zentriere die Icons */
+    justify-content: center;
+    /* Zentriere den Text */
     padding: 10px;
-    text-align: center;
     text-decoration: none;
 }
 
