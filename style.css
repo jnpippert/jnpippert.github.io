@@ -8,6 +8,7 @@
     --transition-speed: 600ms;
     --detail-color: #6c7517;
     --navlink-height: 5rem;
+    --pop-color: #898989;
 }
 
 
@@ -93,6 +94,13 @@ hr {
     margin: 0 auto;
     columns: 3 400px;
     column-gap: 1em;
+}
+
+.gallery-container .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s ease;
 }
 
 .gallery-img {
@@ -307,7 +315,7 @@ main .contcontainer {
         padding: .5em;
     }
 
-    .gallery-img {
+    .image {
         margin-bottom: .5em;
     }
 
@@ -424,6 +432,7 @@ main .contcontainer {
     }
 }
 
+
 @media only screen and (min-width: 600px) {
     .navbar {
         top: 0;
@@ -451,6 +460,45 @@ main .contcontainer {
         font-size: 1.5rem;
         padding: 0;
         gap: 0;
+    }
+
+    .gallery-container .image:hover img {
+        cursor: pointer;
+    }
+
+    .popup-image {
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, .9);
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        display: none;
+    }
+
+    .popup-image span {
+        position: absolute;
+        font-size: 4rem;
+        color: var(--pop-color);
+        cursor: pointer;
+        z-index: 100;
+    }
+
+    .popup-image span:hover {
+        color: var(--detail-color);
+    }
+
+    .popup-image img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 1em;
+        border: .1em solid var(--pop-color);
+        max-height: 95%;
+        max-width: 95%;
+        object-fit: cover;
     }
 
 }
