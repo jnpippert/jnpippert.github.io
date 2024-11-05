@@ -464,6 +464,8 @@ main .contcontainer {
 
     .gallery-container .image:hover img {
         cursor: pointer;
+        filter: brightness(65%);
+        transition: all .5s ease;
     }
 
     .popup-image {
