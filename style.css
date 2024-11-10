@@ -24,7 +24,6 @@
     width: 8rem;
     height: 8rem;
     filter: grayscale(100%);
-    display: flex;
     float: right;
     margin-right: 10px;
 }
