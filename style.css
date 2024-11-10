@@ -169,30 +169,28 @@ hr {
     display: block;
     border: 1rem;
     border-top: .1rem solid #868686;
-    margin: 5em 0;
-    margin-left: 3rem;
+    margin: 5rem 0;
     margin-right: 3rem;
+    margin-left: 3rem;
 }
 
 .soft-image-right {
     border-radius: 20px;
-    width: 8rem;
+    width: 35vw;
     height: auto;
     display: flex;
     float: right;
-    margin-left: 30px;
-    margin-right: 3rem;
+    margin: 0;
 }
 
 .soft-image-left {
     border-radius: 20px;
-    width: 8rem;
+    width: 35vw;
     height: auto;
     display: flex;
     float: left;
     justify-content: left;
-    margin-right: 30px;
-    margin-left: 3rem;
+    margin: 0;
 }
 
 .hyperlink {
@@ -310,6 +308,16 @@ main .contcontainer {
         margin-top: -5rem;
     }
 
+
+    .soft-image-left {
+        width: 100vw;
+        margin: 0;
+    }
+
+    .soft-image-right {
+        width: 100vw;
+        margin: 0;
+    }
 
     .gallery-container {
         column-gap: .5em;

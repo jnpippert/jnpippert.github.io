@@ -135,14 +135,14 @@
             <h2 id="sec-soft">Software</h2>
         </div>
         <div class="soft-asp">
-            <img class="soft-image-left" src="images/placeholder.png" alt="placeholder">
+            <img class="soft-image-left" src="" alt="placeholder">
             <h3 class="soft-name">astrostreampy</h3>
             <p class="soft-text">Model Tidal Streams.
             </p>
         </div>
         <hr class="soft-border">
         <div class="soft-qhyc">
-            <img class="soft-image-right" src="images/placeholder.png" alt="placeholder">
+            <img class="soft-image-right" src="" alt="placeholder">
             <h3 class="soft-name">qhycontrol</h3>
             <p class="soft-text">A porgram to control a QHYCCD camera. Developed for the QHY 600m Pro, which is the
                 current CMOS camera on
@@ -156,21 +156,35 @@
         </div>
         <hr class="soft-border">
         <div class="soft-qhyr">
-            <img class="soft-image-left" src="images/placeholder.png" alt="placeholder">
-            <h3 class="soft-name">qhyreduce</h3>
-            <p class="soft-text">The corresponding data reduction pipeline (for beautiful images) to the qhycontrol
-                software. The
-                pipeline is parallelized and written in Python. It performs the basic data reduction steps: Overscan
-                Subtraction, Overscan Cropping, Bias Subtraction, Dark Subtraction and Flat Fielding. The astrometric
-                solution is done via bash scripts utilizing <a class="hyperlink"
-                    href="https://www.astromatic.net/software/sextractor/" target="_blank">SExtractor</a> and <a
-                    class="hyperlink" href="https://www.astromatic.net/software/scamp/" target="_blank">Scamp</a>. For
-                the coadding I use <a class="hyperlink" target="_blank"
-                    href="https://www.astromatic.net/software/swarp/">SWarp</a>.
+            <img class="soft-image-left" src="svgs/reduce.svg" alt="placeholder">
+            <h3 class="soft-name">qhyreduce <a class="hyperlink" href="https://github.com/jnpippert/qhyreduce"
+                    target="_blank">[source]</a></h3>
+            <p class="soft-text"><i>Python;Bash</i></p>
+            <p class="soft-text">The corresponding data reduction (for beautiful images) to the qhycontrol
+                software. The pipeline has two main steps: (1) Reduce the images using Python. (2) Solve the astrometry
+                and stack the images using bash
+                scripts and external software.</p>
+            <p class="soft-text">The Python redcution performs basic steps, which are subtracting and cropping away
+                the overscan. Create and subtract a masterbias. Create and subtract a masterdark, based on the exposure
+                time (temperature not implemented yet). Create, which also includes the first two steps, and divide a
+                masterflat, based on the date and observed filter band. Each step is parallelized and after every step
+                the previous one is deleted from disk. Additional functionalities and how to use the pipline is on
+                written in the <i>README</i> on GitHub.</p>
+            <p class="soft-text">For the astrometric solution I use a software suite by <a class="hyperlink"
+                    target="_blank" href="https://www.astromatic.net/team/emmanuel/">Emmanuel Bertin</a>. First, sources
+                in every reduced image are detected with <a class="hyperlink"
+                    href="https://www.astromatic.net/software/sextractor/" target="_blank">SExtractor</a>. To get an
+                estimate for the quality of all images I let SExtractor measure the full width at half maximum and the
+                ellipticity for each source. With that, bad seeing conditions or tracking errors of the telescope mount
+                can be detected. <a class="hyperlink" href="https://www.astromatic.net/software/scamp/"
+                    target="_blank">Scamp</a> will then calculate the best solution for the World Coordinate System. <a
+                    class="hyperlink" target="_blank" href="https://www.astromatic.net/software/swarp/">SWarp</a> uses
+                the WCS and stacks
+                all images which where selected by certain seeing and ellipticity constraints.</p>
         </div>
         <hr class="soft-border">
         <div class="soft-sf">
-            <img class="soft-image-right" src="images/placeholder.png" alt="placeholder">
+            <img class="soft-image-right" src="" alt="placeholder">
             <h3 class="soft-name">scifloat</h3>
             <p class="soft-text">A fun project I started when I supervised the physics labs of medicine students. As
                 they should learn
