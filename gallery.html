@@ -90,6 +90,9 @@
             <div class="image"><img class="gallery-img" src="gallery/aurora_sweden.jpg" alt=""></div>
             <div class="image"><img class="gallery-img" src="gallery/trails_pavillon.jpg" alt=""></div>
             <div class="image"><img class="gallery-img" src="gallery/trails_castle.jpg" alt=""></div>
+            <div class="image"><img class="gallery-img" src="gallery/mars_m45.jpg" alt=""></div>
+            <div class="image"><img class="gallery-img" src="gallery/heart_nebula.jpg" alt=""></div>
+            <div class="image"><img class="gallery-img" src="gallery/a426.jpeg" alt=""></div>
         </div>
 
         <div class="popup-image">
@@ -133,37 +136,42 @@
                 document.getElementById("navbar").classList.remove("active");
             }
         };
+
         document.querySelectorAll(".gallery-container img").forEach(image => {
             image.onclick = () => {
-                const popupImageContainer = document.querySelector(".popup-image");
-                const popupImage = popupImageContainer.querySelector("img");
-                const closeButton = popupImageContainer.querySelector("span");
+                if (window.innerWidth > 600) {
+                    console.log(window.innerWidth)
+                    const popupImageContainer = document.querySelector(".popup-image");
+                    const popupImage = popupImageContainer.querySelector("img");
+                    const closeButton = popupImageContainer.querySelector("span");
 
-                // Display the popup and set the image source
-                popupImageContainer.style.display = "block";
-                popupImage.src = image.getAttribute('src');
+                    // Display the popup and set the image source
+                    popupImageContainer.style.display = "block";
+                    popupImage.src = "midres_" + image.getAttribute('src');
+                    console.log(popupImage.src)
+                    // Add an onload event to ensure the image is fully loaded before getting its dimensions
+                    popupImage.onload = () => {
+                        const popupImageWidth = parseFloat(getComputedStyle(popupImage).width);
+                        const popupImageHeight = parseFloat(getComputedStyle(popupImage).height);
 
-                // Add an onload event to ensure the image is fully loaded before getting its dimensions
-                popupImage.onload = () => {
-                    const popupImageWidth = parseFloat(getComputedStyle(popupImage).width);
-                    const popupImageHeight = parseFloat(getComputedStyle(popupImage).height);
+                        // Calculate `right` for close button as a percentage based on image width
+                        const calculatedRight = ((window.innerWidth - popupImageWidth) / 2) + "px";
+                        const calculatedTop = ((window.innerHeight - popupImageHeight) / 2) + "px";
+                        closeButton.style.right = calculatedRight;
+                        closeButton.style.top = calculatedTop;
 
-                    // Calculate `right` for close button as a percentage based on image width
-                    const calculatedRight = ((window.innerWidth - popupImageWidth) / 2) + "px";
-                    const calculatedTop = ((window.innerHeight - popupImageHeight) / 2) + "px";
-                    closeButton.style.right = calculatedRight;
-                    closeButton.style.top = calculatedTop;
-
-                    // Log the width of the image in the popup
-                    console.log("Popup image width:", popupImageWidth);
-                    console.log("Window Width:", window.innerWidth);
-                    console.log("Close button right position:", calculatedRight);
+                        // Log the width of the image in the popup
+                        console.log("Popup image width:", popupImageWidth);
+                        console.log("Window Width:", window.innerWidth);
+                        console.log("Close button right position:", calculatedRight);
+                    };
                 };
             };
         });
         document.querySelector(".popup-image span").onclick = () => {
-            document.querySelector(".popup-image").style.display = "none";
-
+            if (window.innerWidth > 600) {
+                document.querySelector(".popup-image").style.display = "none";
+            }
         }
     </script>
 
