@@ -180,6 +180,8 @@ hr {
     display: flex;
     float: right;
     margin: 0;
+    padding: 0.5rem;
+    margin-right: 3rem
 }
 
 .soft-image-left {
@@ -190,6 +192,8 @@ hr {
     float: left;
     justify-content: left;
     margin: 0;
+    padding: 0.5rem;
+    margin-left: 3rem
 }
 
 .hyperlink {
@@ -201,6 +205,7 @@ main .headcontainer,
 main .contcontainer {
     max-width: fit-content;
     margin: 0 auto;
+    padding: 0.5rem;
 }
 
 .banner img {
