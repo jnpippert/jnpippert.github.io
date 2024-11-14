@@ -191,16 +191,41 @@
         <div class="soft-sf">
             <img class="soft-image-right" src="" alt="placeholder">
             <h3 class="soft-name">scifloat <a class="hyperlink" href="https://github.com/jnpippert/scifloat"
-                    target="_blank">[source]</a></h3>
+                    target="_blank">[source]</a> <a class="hyperlink" href="https://pypi.org/project/scifloat/"
+                    target="_blank">[PyPi]</a></h3>
             </h3>
-            <p class="soft-text"><i>Python;Bash</i></p>
-            <p class="soft-text">A fun project I started when I supervised the physics labs of medicine students. As
-                they should learn
-                exactly how to round correctly, I thought of writing a small Python package which contains one data
-                type; the scifloat. The type inhibits three values, the measurement and it's
+            <p class="soft-text"><i>Python</i></p>
+            <p class="soft-text">A fun project I started when I supervised the physics labs of med students. As
+                they have to learn how to round correctly, I thought of writing a small Python package which contains
+                one data type; the <i>scifloat</i>. The type inhibits three values, the measurement and it's
                 corresponding errors. The errors are rounded by the rules of significant digits and afterwards the
-                measurement is rounded accordingly. The type is pip-installable as a Python package called <a
-                    class="hyperlink" target="_blank" href="https://pypi.org/project/scifloat/">scifloat</a>.</p>
+                measurement is rounded accordingly.
+            <p class="soft-text">The rules are the following:</p>
+            <ul class="soft-text">
+                <li>
+                    <p>Determine the number of <b>significant digits</b> based on the value of the leading digit, where
+                        zero does not count as one. <b>2</b> means the leading digit is either 1 or 2. <b>1</b> for any
+                        other case.
+                    </p>
+                </li>
+                <li>
+                    <p>Round the uncertainty to the last significant digit. Always round up.
+                    </p>
+                </li>
+                <li>
+                    <p>If the measurement has assymmetric errors do the same for both. After that decide which error has
+                        the lowest precision, i.e., the lowest number decimal places. Round the other uncertainty so
+                        that both have the same number of decimals. Round always up.
+                    </p>
+                </li>
+                <li>
+                    <p>Round the measurement to the same precision as its uncertainty. Round down/up if the rounding
+                        digit is less/more than 5. If it is exactly 5, then you round such that the digit in front is
+                        even. This rule has the intention, that for a large number of measurements you eliminate a
+                        statistical bias, because not all values are rounded up.
+                    </p>
+                </li>
+            </ul>
         </div>
     </main>
 
