@@ -24,8 +24,9 @@
     width: 8rem;
     height: 8rem;
     filter: grayscale(100%);
+    transition: filter var(--transition-speed) ease, transform var(--transition-speed) ease;
     float: right;
-    margin-right: 10px;
+    margin-right: 1em;
 }
 
 body {
@@ -122,6 +123,7 @@ hr {
     height: 100%;
 }
 
+
 .nav-item {
     width: 100%;
 }
@@ -145,12 +147,11 @@ hr {
     background: var(--bg-secondary);
 }
 
-.link-text {
-    display: none;
+.navbar .link-text {
+    opacity: 0;
     margin-left: 1rem;
     font-size: 24px;
     font-weight: bold;
-    color: var(--text-primary);
 }
 
 .soft-text {
@@ -463,9 +464,15 @@ main .contcontainer {
     }
 
     .navbar:hover .link-text {
-        display: inline;
+        opacity: 1;
         color: var(--detail-color);
-        transition: display var(--transition-speed) ease;
+        transition: opacity .9s ease-in-out;
+    }
+
+    .portrait:hover {
+        transform: scale(1.05);
+        filter: grayscale(0%);
+        transition: filter var(--transition-speed) ease, transform var(--transition-speed) ease;
     }
 
     .banner:hover img {
