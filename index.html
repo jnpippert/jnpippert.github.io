@@ -84,11 +84,10 @@
             <p>Everything started with a camera, a tripod and a clear sky above my head. As I began to wonder what the
                 universe has to offer, the path was clear; <i>to become an astrophysicist</i>.</p>
             <p>I studied Physics and Astrophysics at the Ludwig-Maximilians-Universität in Munich. During that time I
-                had
-                the chance to become an observer at the 2.1m Wendelstein Telescope. After my master's degree, which I
-                finished with a thesis about the modeling and the photometry of extragalactic tidal streams and tails, I
-                started my PhD in 2023 at the Max Planck Institute for extraterrestrial Physics. My research now focuses
-                on stellar populations of galaxies in the Perseus cluster of galaxies.</p>
+                had the chance to become an observer at the 2.1m Wendelstein Telescope. After my master's degree, which
+                I finished with a thesis about the modeling and the photometry of extragalactic tidal streams and tails,
+                I started my PhD in 2023 at the Max Planck Institute for extraterrestrial Physics. My research now
+                focuses on stellar populations of galaxies in the Perseus cluster of galaxies.</p>
         </div>
         <hr>
         <div class="headcontainer">
@@ -141,94 +140,126 @@
                     href="https://pypi.org/project/astrostreampy/" target="_blank">[PyPi]</a></h3>
             </h3>
             <p class="soft-text"><i>Python</i></p>
-            <p class="soft-text">Model Tidal Streams.
+            <p class="soft-text"><em>astrostreampy</em> is a package that aims to model and measure photometric
+                properties of extragalactic stellar tidal streams. The modeling is quite simple and utilizes a
+                rectangular shaped box that moves along the stream and models the light profile perpendicular to the
+                major axis. A Gaussian fits the brightness profile sufficiently.
             </p>
-        </div>
-        <hr class="soft-border">
-        <div class="soft-qhyc">
-            <img class="soft-image-right" src="" alt="placeholder">
-            <h3 class="soft-name">qhycontrol <a class="hyperlink" href="https://github.com/jnpippert/qhycontrol"
-                    target="_blank">[source]</a></h3>
-            </h3>
-            <p class="soft-text"><i>C++</i></p>
-            <p class="soft-text">A porgram to control a QHYCCD camera. Developed for the QHY 600m Pro, which is the
-                current CMOS camera on
-                the CDK17 at Wendelstein. This telescope is used for the training of students, TESS transits and public
-                outreach. It utilizes the QHYCCD SDK to connect and open the camera, set the parameters and to take one
-                or multiple images. To save the images as FITS files I use the LTL library, devloped among others by
-                <a class="hyperlink" target="_blank" href="https://www.usm.uni-muenchen.de/~cag/cag_ge.html">Claus
-                    Gössl</a>, the head
-                of the Software and Hardware at the Wendelstein Telescope.
+            <p class="soft-text">To start the modeling, the user loads the image along masks of contaminating
+                sources and defines the initial box. After that the alogrithm starts to model the stream in both
+                directions away from the initial box simultaneously. It terminates when it reaches a signal-to-noise
+                threshold or reaches user-defined endpoints.</p>
+            <p class="soft-text">The Gaussian modeling works as follows. A 2D grid with the dimensions of the current
+                box is created. The grid stores distance information for each position with respect to the vertical
+                center line (grid angle is zero). For angles other than zero, the line rotates counter clockwise. The
+                grid is then feeded into a Gaussian to translate the distance information into brightness values. Now
+                the grid is a stacked 1D Gaussian, where its peak is a the position of the center line, and falling off
+                symmetrically to both sides. The user is also able to turn on higher-order moment fitting to account for
+                skewness and curtosis.</p>
+            <p class="soft-text"> A detailed README can be found on the offical GitHub. A detailed description of the
+                alogrithm and the distance grid can be found in <a class="hyperlink" href=""> Pippert in Prep.</a>
             </p>
-        </div>
-        <hr class="soft-border">
-        <div class="soft-qhyr">
-            <img class="soft-image-left" src="svgs/reduce.svg" alt="placeholder">
-            <h3 class="soft-name">qhyreduce <a class="hyperlink" href="https://github.com/jnpippert/qhyreduce"
-                    target="_blank">[source]</a></h3>
-            <p class="soft-text"><i>Python;Bash</i></p>
-            <p class="soft-text">The corresponding data reduction (for beautiful images) to the qhycontrol
-                software. The pipeline has two main steps: (1) Reduce the images using Python. (2) Solve the astrometry
-                and stack the images using bash
-                scripts and external software.</p>
-            <p class="soft-text">The Python redcution performs basic steps, which are subtracting and cropping away
-                the overscan. Create and subtract a masterbias. Create and subtract a masterdark, based on the exposure
-                time (temperature not implemented yet). Create, which also includes the first two steps, and divide a
-                masterflat, based on the date and observed filter band. Each step is parallelized and after every step
-                the previous one is deleted from disk. Additional functionalities and how to use the pipline is on
-                written in the <i>README</i> on GitHub.</p>
-            <p class="soft-text">For the astrometric solution I use a software suite by <a class="hyperlink"
-                    target="_blank" href="https://www.astromatic.net/team/emmanuel/">Emmanuel Bertin</a>. First, sources
-                in every reduced image are detected with <a class="hyperlink"
-                    href="https://www.astromatic.net/software/sextractor/" target="_blank">SExtractor</a>. To get an
-                estimate for the quality of all images I let SExtractor measure the full width at half maximum and the
-                ellipticity for each source. With that, bad seeing conditions or tracking errors of the telescope mount
-                can be detected. <a class="hyperlink" href="https://www.astromatic.net/software/scamp/"
-                    target="_blank">Scamp</a> will then calculate the best solution for the World Coordinate System. <a
-                    class="hyperlink" target="_blank" href="https://www.astromatic.net/software/swarp/">SWarp</a> uses
-                the WCS and stacks
-                all images which where selected by certain seeing and ellipticity constraints.</p>
-        </div>
-        <hr class="soft-border">
-        <div class="soft-sf">
-            <img class="soft-image-right" src="svgs/scifloat.svg" alt="placeholder">
-            <h3 class="soft-name">scifloat (2.1.0) <a class="hyperlink" href="https://github.com/jnpippert/scifloat"
-                    target="_blank">[source]</a> <a class="hyperlink" href="https://pypi.org/project/scifloat/"
-                    target="_blank">[PyPi]</a></h3>
-            </h3>
-            <p class="soft-text"><i>Python</i></p>
-            <p class="soft-text">A fun project I started when I supervised the physics labs of med students. As
-                they have to learn how to round correctly, I thought of writing a small Python package which contains
-                one data type; the <i>scifloat</i>. The type inhibits three values, the measurement and it's
-                corresponding errors. The errors are rounded by the rules of significant digits and afterwards the
-                measurement is rounded accordingly.
-            <p class="soft-text">The rules are the following:</p>
-            <ul class="soft-text">
-                <li>
-                    <p>Determine the number of <b>significant digits</b> based on the value of the leading digit, where
-                        zero does not count as one. <b>2</b> means the leading digit is either 1 or 2. <b>1</b> for any
-                        other case.
-                    </p>
-                </li>
-                <li>
-                    <p>Round the uncertainty to the last significant digit. Always round up.
-                    </p>
-                </li>
-                <li>
-                    <p>If the measurement has assymmetric errors do the same for both. After that decide which error has
-                        the lowest precision, i.e., the lowest number decimal places. Round the other uncertainty so
-                        that both have the same number of decimals. Round always up.
-                    </p>
-                </li>
-                <li>
-                    <p>Round the measurement to the same precision as its uncertainty. Round down/up if the rounding
-                        digit is less/more than 5. If it is exactly 5, then you round such that the digit in front is
-                        even. This rule has the intention, that for a large number of measurements you eliminate a
-                        statistical bias, because not all values are rounded up.
-                    </p>
-                </li>
-            </ul>
-        </div>
+            <hr class="soft-border">
+            <div class="soft-qhyc">
+                <img class="soft-image-right" src="" alt="placeholder">
+                <h3 class="soft-name">qhycontrol <a class="hyperlink" href="https://github.com/jnpippert/qhycontrol"
+                        target="_blank">[source]</a></h3>
+                </h3>
+                <p class="soft-text"><i>C++</i></p>
+                <p class="soft-text">A program to control a QHYCCD camera. Developed for the QHY 600m Pro, which is the
+                    current CMOS camera on
+                    the CDK17 at Wendelstein. This telescope is used for the training of students, TESS transits and
+                    public
+                    outreach. It utilizes the QHYCCD SDK to connect and open the camera, set the parameters and to take
+                    one
+                    or multiple images. To save the images as FITS files I use the LTL library, devloped among others by
+                    <a class="hyperlink" target="_blank" href="https://www.usm.uni-muenchen.de/~cag/cag_ge.html">Claus
+                        Gössl</a>, the force
+                    behind the Software and Hardware at the Wendelstein Telescope.
+                </p>
+            </div>
+            <hr class="soft-border">
+            <div class="soft-qhyr">
+                <img class="soft-image-left" src="svgs/reduce.svg" alt="placeholder">
+                <h3 class="soft-name">qhyreduce <a class="hyperlink" href="https://github.com/jnpippert/qhyreduce"
+                        target="_blank">[source]</a></h3>
+                <p class="soft-text"><i>Python;Bash</i></p>
+                <p class="soft-text">The corresponding data reduction (for beautiful images) to the qhycontrol
+                    software. The pipeline has two main steps: (1) Reduce the images using Python. (2) Solve the
+                    astrometry
+                    and stack the images using bash
+                    scripts and external software.</p>
+                <p class="soft-text">The Python redcution performs basic steps, which are subtracting and cropping away
+                    the overscan. Create and subtract a masterbias. Create and subtract a masterdark, based on the
+                    exposure
+                    time (temperature not implemented yet). Create, which also includes the first two steps, and divide
+                    a
+                    masterflat, based on the date and observed filter band. Each step is parallelized and after every
+                    step
+                    the previous one is deleted from disk. Additional functionalities and how to use the pipline is on
+                    written in the <i>README</i> on GitHub.</p>
+                <p class="soft-text">For the astrometric solution I use a software suite by <a class="hyperlink"
+                        target="_blank" href="https://www.astromatic.net/team/emmanuel/">Emmanuel Bertin</a>. First,
+                    sources
+                    in every reduced image are detected with <a class="hyperlink"
+                        href="https://www.astromatic.net/software/sextractor/" target="_blank">SExtractor</a>. To get an
+                    estimate for the quality of all images I let SExtractor measure the full width at half maximum and
+                    the
+                    ellipticity for each source. With that, bad seeing conditions or tracking errors of the telescope
+                    mount
+                    can be detected. <a class="hyperlink" href="https://www.astromatic.net/software/scamp/"
+                        target="_blank">Scamp</a> will then calculate the best solution for the World Coordinate System.
+                    <a class="hyperlink" target="_blank" href="https://www.astromatic.net/software/swarp/">SWarp</a>
+                    uses
+                    the WCS and stacks
+                    all images which where selected by certain seeing and ellipticity constraints.
+                </p>
+            </div>
+            <hr class="soft-border">
+            <div class="soft-sf">
+                <img class="soft-image-right" src="svgs/scifloat.svg" alt="placeholder">
+                <h3 class="soft-name">scifloat (2.1.0) <a class="hyperlink" href="https://github.com/jnpippert/scifloat"
+                        target="_blank">[source]</a> <a class="hyperlink" href="https://pypi.org/project/scifloat/"
+                        target="_blank">[PyPi]</a></h3>
+                </h3>
+                <p class="soft-text"><i>Python</i></p>
+                <p class="soft-text">A fun project I started when I supervised the physics labs of med students. As
+                    they have to learn how to round correctly, I thought of writing a small Python package which
+                    contains
+                    one data type; the <i>scifloat</i>. The type inhibits three values, the measurement and it's
+                    corresponding errors. The errors are rounded by the rules of significant digits and afterwards the
+                    measurement is rounded accordingly.
+                <p class="soft-text">The rules are the following:</p>
+                <ul class="soft-text">
+                    <li>
+                        <p>Determine the number of <b>significant digits</b> based on the value of the leading digit,
+                            where
+                            zero does not count as one. <b>2</b> means the leading digit is either 1 or 2. <b>1</b> for
+                            any
+                            other case.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Round the uncertainty to the last significant digit. Always round up.
+                        </p>
+                    </li>
+                    <li>
+                        <p>If the measurement has assymmetric errors do the same for both. After that decide which error
+                            has
+                            the lowest precision, i.e., the lowest number decimal places. Round the other uncertainty so
+                            that both have the same number of decimals. Round always up.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Round the measurement to the same precision as its uncertainty. Round down/up if the rounding
+                            digit is less/more than 5. If it is exactly 5, then you round such that the digit in front
+                            is
+                            even. This rule has the intention, that for a large number of measurements you eliminate a
+                            statistical bias, because not all values are rounded up.
+                        </p>
+                    </li>
+                </ul>
+            </div>
     </main>
 
     <footer class="impressum">
