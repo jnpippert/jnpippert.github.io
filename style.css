@@ -34,6 +34,11 @@ body {
     background-color: rgb(247, 243, 237);
     margin: 0;
     padding: 0;
+    background-image: url("images/bg_test.png");
+    background-attachment: scroll;
+    background-position: center;
+    background-blend-mode: color;
+    background-size: cover;
 }
 
 body::-webkit-scrollbar {
