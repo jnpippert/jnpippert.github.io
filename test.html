@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+
+<body>
+    <main>
+        <div class="gallery-container">
+            <div class="container">
+                <img class="image" src="gallery/aurora_lyon.jpg" alt="Avatar">
+                <div class="overlay">
+                    <div class="text">Hello World</div>
+                </div>
+
+            </div>
+            <div class="container">
+                <img class="image"
+                    src="https://68.media.tumblr.com/20b34e8d12d4230f9b362d7feb148c57/tumblr_oiwytz4dh41tf8vylo1_1280.png"
+                    alt="Avatar">
+                <div class="overlay">
+                    <div class="text">Hello World</div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+<style>
+    .gallery-container {
+        width: min(1500px, 100%);
+        margin: 0 auto;
+        columns: 3 400px;
+        column-gap: 1em;
+    }
+
+    .container {
+        position: relative;
+    }
+
+    .image {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: 3s ease;
+        background-color: #393939d8;
+    }
+
+
+    .container:hover .overlay {
+        opacity: 1;
+        cursor: pointer;
+
+    }
+
+
+    .text {
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+    }
+
+
+    .container .image:hover img {
+        cursor: pointer;
+        filter: brightness(65%);
+        transition: all .5s ease;
+    }
+</style>
+
+</html>
