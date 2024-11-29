@@ -324,16 +324,37 @@
                         console.log("Popup image width:", popupImageWidth);
                         console.log("Window Width:", window.innerWidth);
                         console.log("Close button right position:", calculatedRight);
-                    };
-                };
+                    }
+                }
             }
         )
 
         );
 
+        document.querySelectorAll(".gallery-container div").forEach(el => el.addEventListener(
+            "click",
+            event => {
+                const img = el.querySelector("img");
+                const over = el.querySelector(".overlay")
+                const container = document.querySelector(".container");
+                const imgover = container.querySelector("img")
+                const ImageWidth = parseFloat(getComputedStyle(img).width);
+                const ImageHeight = parseFloat(getComputedStyle(img).height);
+                if (window.innerWidth <= 600) {
+                    if (over.style.opacity == 0) {
+                        over.style.opacity = 0.85
+                        over.style.width = ImageWidth + "px"
+                        over.style.height = ImageHeight + "px"
+                        over.style.margin = ".5em"
+                        over.style.transition = ".5s ease"
+                    } else {
+                        over.style.opacity = 0
+                    }
+                }
+            }
+        )
 
-
-
+        );
 
         document.querySelector(".popup-image span").onclick = () => {
             if (window.innerWidth > 600) {
