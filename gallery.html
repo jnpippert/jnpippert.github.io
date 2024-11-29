@@ -326,33 +326,27 @@
                         console.log("Close button right position:", calculatedRight);
                     }
                 }
-            }
-        )
-
-        );
-
-        document.querySelectorAll(".gallery-container div").forEach(el => el.addEventListener(
-            "click",
-            event => {
-                const img = el.querySelector("img");
-                const over = el.querySelector(".overlay")
-                const container = document.querySelector(".container");
-                const imgover = container.querySelector("img")
-                const text = el.querySelector(".text")
-                const head = el.querySelector(".text .object")
-                const ImageWidth = parseFloat(getComputedStyle(img).width);
-                const ImageHeight = parseFloat(getComputedStyle(img).height);
                 if (window.innerWidth <= 600) {
+                    const img = el.querySelector("img");
+                    const over = el.querySelector(".container .overlay")
+                    const container = document.querySelector(".container");
+                    const imgover = container.querySelector("img")
+                    const text = el.querySelector(".text")
+                    const head = el.querySelector(".text .object")
+
+                    const ImageWidth = parseFloat(getComputedStyle(imgover).width);
+                    const ImageHeight = parseFloat(getComputedStyle(img).height);
                     console.log(over.style.opacity)
                     if (over.style.opacity == 0) {
                         over.style.opacity = 0.85
                         over.style.width = ImageWidth + "px"
                         over.style.height = ImageHeight + "px"
                         over.style.margin = ".5em"
-                        head.style.fontSize = (ImageHeight * 0.05) + "px"
-                        text.style.fontSize = (ImageHeight * 0.04) + "px"
-
-                    } else {
+                        over.style.transition = "ease"
+                        head.style.fontSize = "5vw"
+                        text.style.fontSize = "4vw"
+                    }
+                    else {
                         over.style.opacity = 0
                         head.style.fontSize = "auto"
                         text.style.fontSize = "auto"
@@ -362,6 +356,39 @@
         )
 
         );
+
+        // document.querySelectorAll(".gallery-container div").forEach(el => el.addEventListener(
+        //     "click",
+        //     event => {
+        //         const img = el.querySelector("img");
+        //         if (window.innerWidth <= 600) {
+        //             const img = el.querySelector("img");
+        //             const over = el.querySelector(".container .overlay")
+        //             const container = document.querySelector(".container");
+        //             const imgover = container.querySelector("img")
+        //             const text = el.querySelector(".text")
+        //             const head = el.querySelector(".text .object")
+
+        //             const ImageWidth = parseFloat(getComputedStyle(imgover).width);
+        //             const ImageHeight = parseFloat(getComputedStyle(img).height);
+        //             console.log(over.style.opacity)
+        //             if (over.style.opacity == 0) {
+        //                 over.style.opacity = 0.85
+        //                 over.style.width = ImageWidth + "px"
+        //                 over.style.height = ImageHeight + "px"
+        //                 over.style.margin = ".5em"
+        //                 over.style.transition = "ease"
+        //                 // head.style.fontSize = (ImageHeight * 0.05) + "px"
+        //                 text.style.fontSize = "auto"
+        //             }
+        //             else {
+        //                 over.style.opacity = 0
+        //             }
+        //         }
+        //     }
+        // )
+
+        // );
 
         document.querySelector(".popup-image span").onclick = () => {
             if (window.innerWidth > 600) {
