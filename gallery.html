@@ -338,19 +338,24 @@
                 const over = el.querySelector(".overlay")
                 const container = document.querySelector(".container");
                 const imgover = container.querySelector("img")
-                const text = container.querySelector("text")
+                const text = el.querySelector(".text")
+                const head = el.querySelector(".text .object")
                 const ImageWidth = parseFloat(getComputedStyle(img).width);
                 const ImageHeight = parseFloat(getComputedStyle(img).height);
                 if (window.innerWidth <= 600) {
+                    console.log(over.style.opacity)
                     if (over.style.opacity == 0) {
                         over.style.opacity = 0.85
                         over.style.width = ImageWidth + "px"
                         over.style.height = ImageHeight + "px"
                         over.style.margin = ".5em"
-                        text.style.fontSize = "1rem"
+                        head.style.fontSize = (ImageHeight * 0.05) + "px"
+                        text.style.fontSize = (ImageHeight * 0.04) + "px"
 
                     } else {
                         over.style.opacity = 0
+                        head.style.fontSize = "auto"
+                        text.style.fontSize = "auto"
                     }
                 }
             }
