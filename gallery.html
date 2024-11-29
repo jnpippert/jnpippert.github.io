@@ -338,6 +338,7 @@
                 const over = el.querySelector(".overlay")
                 const container = document.querySelector(".container");
                 const imgover = container.querySelector("img")
+                const text = container.querySelector("text")
                 const ImageWidth = parseFloat(getComputedStyle(img).width);
                 const ImageHeight = parseFloat(getComputedStyle(img).height);
                 if (window.innerWidth <= 600) {
@@ -346,7 +347,8 @@
                         over.style.width = ImageWidth + "px"
                         over.style.height = ImageHeight + "px"
                         over.style.margin = ".5em"
-                        over.style.transition = ".5s ease"
+                        text.style.fontSize = "1rem"
+
                     } else {
                         over.style.opacity = 0
                     }
