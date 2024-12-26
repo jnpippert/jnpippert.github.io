@@ -541,6 +541,8 @@ main .contcontainer {
         color: var(--pop-color);
         cursor: pointer;
         z-index: 100;
+        top: -1rem;
+        right: .5rem;
     }
 
     .popup-image span:hover {

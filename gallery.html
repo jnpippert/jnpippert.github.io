@@ -313,17 +313,24 @@
                     popupImage.onload = () => {
                         const popupImageWidth = parseFloat(getComputedStyle(popupImage).width);
                         const popupImageHeight = parseFloat(getComputedStyle(popupImage).height);
-
+                        const spanTimesTop = parseFloat(getComputedStyle(closeButton).top);
+                        const spanTimesRight = parseFloat(getComputedStyle(closeButton).right);
+                        console.log("Close button right position:", spanTimesRight);
+                        console.log("Close button top position:", spanTimesTop);
                         // Calculate `right` for close button as a percentage based on image width
-                        const calculatedRight = ((window.innerWidth - popupImageWidth) / 2) + "px";
-                        const calculatedTop = ((window.innerHeight - popupImageHeight) / 2) + "px";
-                        closeButton.style.right = calculatedRight;
-                        closeButton.style.top = calculatedTop;
+                        // const calculatedRight = ((window.outerWidth - popupImageWidth) / 4) + "px";
+                        // const calculatedTop = ((window.outerHeight - popupImageHeight) / 4) + "px";
+                        // const calculatedRight = ((window.innerWidth - spanTimesDim) + "px");
+                        // const calculatedTop = ((window.innerHeight - spanTimesDim) + "px");
+                        
+                        // closeButton.style.right = calculatedRight;
+                        // closeButton.style.top = calculatedTop;
 
-                        // Log the width of the image in the popup
-                        console.log("Popup image width:", popupImageWidth);
-                        console.log("Window Width:", window.innerWidth);
-                        console.log("Close button right position:", calculatedRight);
+                        // // Log the width of the image in the popup
+                        // console.log("Popup image width:", popupImageWidth);
+                        // console.log("Window Width:", window.innerWidth);
+                        // console.log("Close button right position:", calculatedRight);
+                        // console.log("Close button top position:", calculatedTop);
                     }
                 }
                 if (window.innerWidth <= 600) {
