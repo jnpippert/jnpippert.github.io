@@ -76,14 +76,22 @@
         <h1 class="gallery-head"> Publications & Contributions</h1>
         <hr>
         <div class="publication">
-            <h3 class="pub-name">Confirmation of four hot Jupiters detected by TESS using follow-up spectroscopy from MaHPS at Wendelstein together with NEID and TRES</h3>
+            <h3 class="pub-name">Confirmation of four hot Jupiters detected by TESS using follow-up spectroscopy from
+                MaHPS at Wendelstein together with NEID and TRES</h3>
             </h3>
             <p><i class="far fa-calendar-alt"></i> January 8th 2025 <a class="hyperlink"
                     href="https://arxiv.org/abs/2501.04383" target="_blank">[arXiv]</a>; Month Day Year <a
-                    class="hyperlink" href="https://www.aanda.org/articles/aa/full_html/2024/12/aa51404-24/aa51404-24.html" target="_blank">[A&A]</a></p>
+                    class="hyperlink"
+                    href="https://www.aanda.org/articles/aa/full_html/2024/12/aa51404-24/aa51404-24.html"
+                    target="_blank">[A&A]</a></p>
             <p><i class="fas fa-user-friends"></i> <i><b>Juliana Ehrhardt</b>, Luis Thomas, Hanna Kellermann, et
                     al.</i></p>
-            <p><i class="fas fa-info-circle"></i> "We report the confirmation and characterization of four hot Jupiter-type exoplanets initially detected by TESS: TOI-1295 b, TOI-2580 b, TOI-6016 b, and TOI-6130 b. Using observations with the high-resolution echelle spectrograph MaHPS on the 2.1m telescope at Wendelstein Observatory, together with NEID at Kitt Peak National Observatory and TRES at the Fred Lawrence Whipple Observatory, we confirmed the planetary nature of these four planet candidates. [...]"</p>
+            <p><i class="fas fa-info-circle"></i> "We report the confirmation and characterization of four hot
+                Jupiter-type exoplanets initially detected by TESS: TOI-1295 b, TOI-2580 b, TOI-6016 b, and TOI-6130 b.
+                Using observations with the high-resolution echelle spectrograph MaHPS on the 2.1m telescope at
+                Wendelstein Observatory, together with NEID at Kitt Peak National Observatory and TRES at the Fred
+                Lawrence Whipple Observatory, we confirmed the planetary nature of these four planet candidates. [...]"
+            </p>
             <p><i class="fas fa-pen"></i> I observed some of the spectra for the radial velocity measurements during my
                 shifts at the Wendelstein observatory.</p>
         </div>
@@ -131,6 +139,18 @@
             &copy; Jan-Niklas Pippert. All rights reserved.
         </p>
     </footer>
+    <script>
+        function toggleMenu() {
+            document.getElementById("navbar").classList.toggle("active");
+        }
+
+        // Menü schließen, wenn nach unten gescrollt wird
+        window.onscroll = () => {
+            if (window.innerWidth <= 600) {
+                document.getElementById("navbar").classList.remove("active");
+            }
+        };
+    </script>
 
 
 
