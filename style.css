@@ -330,6 +330,11 @@ main .contcontainer {
     color: var(--detail-color);
 }
 
+.publication {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
 @media only screen and (max-width: 600px) {
 
     #sec-aboutme,
