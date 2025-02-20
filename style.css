@@ -196,6 +196,15 @@ hr {
     margin-left: 3rem;
 }
 
+.pub-border {
+    display: block;
+    border: 1rem;
+    border-top: .1rem solid #868686;
+    margin: 2rem 0;
+    margin-right: 3rem;
+    margin-left: 3rem;
+}
+
 .soft-image-right {
     border-radius: 20px;
     width: 35vw;
