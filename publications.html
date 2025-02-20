@@ -17,6 +17,14 @@
         href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"
+        integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"
+        integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz"
+        crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js"
+        integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
 </head>
 
 <body>
@@ -73,36 +81,70 @@
     </nav>
 
     <main>
-        <h1 class="gallery-head"> Publications & Contributions</h1>
+
+        <h1 class="gallery-head"> Publications</h1>
+
+        <div class="publication">
+            <h3 class="pub-name">Modeling Tidal Streams and Tidal Tails around Galaxies Using Deep Wendelstein Imaging
+                Data</h3>
+            </h3>
+            <p><i class="far fa-calendar-alt"></i> 19 February 2025 <a class="hyperlink"
+                    href="https://iopscience.iop.org/article/10.3847/1538-4357/adabda" target="_blank"><i>ApJ</i></a>
+            </p>
+            <p><i class="fas fa-user-friends"></i> <i><b>Jan-Niklas Pippert</b>, Matthias Kluge and Ralf Bender</i></p>
+            <p><i class="fas fa-info-circle"></i> From the \(\Lambda\) cold dark matter paradigm, it is expected that
+                galaxies merge and grow in their environments. These processes form various tidal features depending on
+                the
+                merger mass ratio, orbital parameters, and gas richness. We inspected 170 \(g'\)-band Abell cluster
+                observations from the \(2.1\,\)m Fraunhofer-Teleskop Wendelstein and identify 111 of such
+                features from which we select nine streams and five tails. A fast and innovative technique was developed
+                for determining their photometric properties. The model is a Gaussian, including higher-order moments to
+                describe the light profile in slices perpendicular to the elongation direction. From these models, FWHM
+                apertures are generated. The method was developed, tested, and applied on the selected features and
+                corresponding \(g\)- and \(r\)-band data from the Legacy Survey DR10. Regarding the novel modeling
+                approach, we
+                can measure surface and total brightnesses with precisions of \(4\%\) and \(7\%\), respectively. Mean
+                stream width
+                precision, which also translates to the mean Re along the feature is on average within \(3\%\)
+                uncertainty.
+                The measured streams have on average a surface brightness of
+                \(\sim 26.25\,g'\) mag arcsec\(^{-2}\) and are dimmer than the tails in our sample (\(\sim 25.14\,g'\)
+                mag arcsec\(^{-2}\)). We infer that the progenitors of our streams can come from dwarfs, early-type
+                galaxies or
+                disks, based on the streams structural parameters. Furthermore, brightnesses and colors of the streams
+                and tails are consistent with those of galaxies that populate the red sequence in the Coma cluster
+                within 2\(\sigma\).
+            </p>
+        </div>
         <hr>
+        <h1 class="gallery-head"> Contributions</h1>
+
         <div class="publication">
             <h3 class="pub-name">Confirmation of four hot Jupiters detected by TESS using follow-up spectroscopy from
                 MaHPS at Wendelstein together with NEID and TRES</h3>
             </h3>
-            <p><i class="far fa-calendar-alt"></i> January 8th 2025 <a class="hyperlink"
-                    href="https://arxiv.org/abs/2501.04383" target="_blank">[arXiv]</a>; Month Day Year <a
-                    class="hyperlink"
+            <p><i class="far fa-calendar-alt"></i> 13 December 2024 <a class="hyperlink"
                     href="https://www.aanda.org/articles/aa/full_html/2024/12/aa51404-24/aa51404-24.html"
-                    target="_blank">[A&A]</a></p>
+                    target="_blank"><i>A&A</i></a></p>
             <p><i class="fas fa-user-friends"></i> <i><b>Juliana Ehrhardt</b>, Luis Thomas, Hanna Kellermann, et
                     al.</i></p>
             <p><i class="fas fa-info-circle"></i> "We report the confirmation and characterization of four hot
                 Jupiter-type exoplanets initially detected by TESS: TOI-1295 b, TOI-2580 b, TOI-6016 b, and TOI-6130 b.
-                Using observations with the high-resolution echelle spectrograph MaHPS on the 2.1m telescope at
+                Using observations with the high-resolution echelle spectrograph MaHPS on the \(2.1\,\)m telescope at
                 Wendelstein Observatory, together with NEID at Kitt Peak National Observatory and TRES at the Fred
                 Lawrence Whipple Observatory, we confirmed the planetary nature of these four planet candidates. [...]"
             </p>
             <p><i class="fas fa-pen"></i> I observed some of the spectra for the radial velocity measurements during my
                 shifts at the Wendelstein observatory.</p>
         </div>
-        <hr>
+        <hr class="soft-border">
         <div class="publication">
             <h3 class="pub-name">TOI-5108 b and TOI 5786 b: Two transiting sub-Saturns detected and characterized with
                 TESS, MaHPS and SOPHIE</h3>
             </h3>
-            <p><i class="far fa-calendar-alt"></i> January 7th 2025 <a class="hyperlink"
-                    href="https://arxiv.org/abs/2501.03803" target="_blank">[arXiv]</a>; Month Day Year <a
-                    class="hyperlink" href="" target="_blank">[A&A]</a></p>
+            <p><i class="far fa-calendar-alt"></i> 07 February 2025 <a class="hyperlink"
+                    href="https://www.aanda.org/articles/aa/full_html/2025/02/aa51676-24/aa51676-24.html"
+                    target="_blank"><i>A&A</i></a></p>
             <p><i class="fas fa-user-friends"></i> <i><b>Luis Thomas</b>, Guillaume Hébrard, Hanna Kellermann, et
                     al.</i></p>
             <p><i class="fas fa-info-circle"></i> "We report the discovery and characterization of two sub-Saturns from
@@ -112,7 +154,7 @@
             <p><i class="fas fa-pen"></i> I observed some of the spectra for the radial velocity measurements during my
                 shifts at the Wendelstein observatory.</p>
         </div>
-        <hr>
+
 
     </main>
 
